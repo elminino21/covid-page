@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: covid-deployment
+  labels:
+    app: covid-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: covid-app
+  template:
+    metadata:
+      labels:
+        app: covid-app
+    spec:
+      containers:
+      - name: covid-app
+        image: elminino/covid-front:0.0.8
+        ports:
+        - containerPort: 80
+
