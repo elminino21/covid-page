@@ -4,8 +4,16 @@
   "description": "Receives custome contact data, and sends and email",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server.js"
   },
   "author": "Jose Gonzalez",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }
