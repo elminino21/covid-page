@@ -1,19 +1,114 @@
-<div class="mat-elevation-z4 container-form">
-  <mat-form-field appearance="fill">
-    <mat-label>Enter your email</mat-label>
-    <input matInput placeholder="pat@example.com" [formControl]="email" required>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Enter your email</mat-label>
-    <input matInput placeholder="pat@example.com" [formControl]="email" required>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Enter your email</mat-label>
-    <input matInput placeholder="pat@example.com" [formControl]="email" required>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Enter your email</mat-label>
-    <input matInput placeholder="pat@example.com" [formControl]="email" required>
-  </mat-form-field>
+<div class="container d-flex justify-content-center ">
+  <div class="mat-elevation-z4 container-form flex-direction: column">
+    <h1 class="display-2 mx-5">Please provide some details to better help you</h1>
+    <div class="container">
+      <form class="form-horizontal">
+        <div class="form-group row">
+
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-6 control-label">Your Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail3" placeholder="Your Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-6 control-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="form-group">
+              <label for="inputEmail3" class="col-sm-6 control-label">Your website</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail3" placeholder="Your website">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-6 control-label">Your location</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputEmail3" placeholder="Your location">
+            </div>
+          </div>
+        </div>
+
+        <h1 class="display-2 col-sm-6">Project Details</h1>
+
+        <div class="form-group">
+          <div class="container flex-direction: row flex-wrap">
+            <div class="checkbox  ml-3">
+              <label>
+                <input type="checkbox"> Web Development
+              </label>
+            </div>
+            <div class="checkbox ml-3">
+              <label>
+                <input type="checkbox"> WPF
+              </label>
+            </div>
+            <div class="checkbox  ml-3">
+              <label>
+                <input type="checkbox"> Nodejs
+              </label>
+            </div>
+            <div class="checkbox  ml-3">
+              <label>
+                <input type="checkbox"> ASP NET core</label>
+            </div>
+            <div class="checkbox  ml-3">
+              <label>
+                <input type="checkbox"> Microservice
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="timelime"> When do you need this completed by?</label>
+          <select class="form-control" id="timeline">
+            <option>As soon as possible</option>
+            <option>1 Week</option>
+            <option>2 Week</option>
+            <option>3 Week</option>
+            <option>1 Month</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+
+        <div class="form-group">
+          <label>What is the project's budget?</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">US$</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <div class="input-group-append">
+              <span class="input-group-text">.00</span>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="form-group">
+          <label>Project Description</label>
+          <div class="form-horizontal">
+            <div class="nput-group-lg ">
+              <textarea class="form-control" rows="3" placeholder="Description" required></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
- 
+
