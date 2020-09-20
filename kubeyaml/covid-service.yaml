@@ -3,15 +3,30 @@ kind: Service
 metadata:
   labels:
     service-label-key: service-covid
-  name: service-covid
+  name: covid-app
 spec:
-  type: ClusterIP
   ports:
-  - name: service-port-covid
-    port: 80
-    protocol: TCP
+  - port: 80
     targetPort: 80
-  type: LoadBalancer
   selector:
-    name: covid-app
-    deployment-label-key: deployment-label-covid
+    app: covid-app
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: covid-app
+spec:
+  selector:
+    matchLabels:
+      app: covid-app
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: covid-app
+    spec:
+      containers:
+      - name: covid-app
+        image: elminino/covid-front:0.0.8
+        ports:
+        - containerPort: 80

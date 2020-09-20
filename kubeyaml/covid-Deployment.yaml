@@ -5,7 +5,7 @@ metadata:
   labels:
     app: covid-app
 spec:
-  replicas: 3
+  replicas: 9
   selector:
     matchLabels:
       app: covid-app
@@ -19,4 +19,30 @@ spec:
         image: elminino/covid-front:0.0.8
         ports:
         - containerPort: 80
-
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: covid-app
+spec:
+  type: ClusterIP
+  selector:
+    app: covid-app
+  ports:
+  - port: 80
+    targetPort: 80
+    #---
+    #apiVersion: v1
+    #kind: Service
+    #metadata:
+    #  name: covid-app
+    #  namespace: default
+    #spec:
+    #  ports:
+    #  - port: 80
+    #    protocol: TCP
+    #    targetPort: 80
+    #  selector:
+    #    run: covid-app
+    #  type: NodePort
+    #
