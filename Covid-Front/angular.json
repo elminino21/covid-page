@@ -17,11 +17,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "allowedCommonJsDependencies": [
-              "jquery-mapael/js/maps/world_countries.js",
-                "jquery-mapael",
-                "jquery"
-            ],
             "outputPath": "dist/Covid-Front",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -34,10 +29,10 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/leaflet/dist/leaflet.css"
             ],
             "scripts": [
-              "./node_modules/jquery-mapael/js/jquery.mapael.js"
             ]
           },
           "configurations": {
