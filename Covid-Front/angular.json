@@ -32,8 +32,7 @@
               "src/styles.scss",
               "node_modules/leaflet/dist/leaflet.css"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -103,7 +102,6 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-
             "tsConfig": [
               "tsconfig.app.json",
               "tsconfig.spec.json",
@@ -127,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Covid-Front"
+    }
+  },
+  "defaultProject": "Covid-Front",
+  "cli": {
+    "analytics": "e9fa7fce-e5f2-4d13-a2ec-af4598de08e3"
+  }
 }

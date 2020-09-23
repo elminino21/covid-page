@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 import { NewsComponent } from './news/news.component';
 
 
@@ -8,7 +10,7 @@ import { NewsComponent } from './news/news.component';
   exports: [NewsComponent],
   declarations: [NewsComponent],
   imports: [
-    CommonModule
+    CommonModule,MatSidenavModule
   ]
 })
 export class NewsModule { }
