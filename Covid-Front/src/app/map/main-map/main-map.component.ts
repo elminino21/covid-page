@@ -13,13 +13,13 @@ export class MainMapComponent implements OnInit {
   }
 
 
- public options = {
-    layers: [
-        tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 5, attribution: '...' })
-    ],
-    zoom: 2.5,
-    center: latLng(29.5352, 16.1719)
-};
+//  public options = {
+//     layers: [
+//         tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 4, minZoom: 2, attribution: '...' })
+//     ],
+//     zoom: 2,
+//     center: latLng(29.5352, 16.1719)
+// };
 
 
 

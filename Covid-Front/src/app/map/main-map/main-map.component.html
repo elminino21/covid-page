@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
 <div class="card ">
   <h2 class="card-header">World Map Covid-19 Stats</h2>
   <div class="card-body">
@@ -8,4 +8,10 @@
      [leafletOptions]="options">
 </div>
   </div>
-</div></div>
+</div></div> -->
+<div class="container">
+<mat-tab-group>
+  <mat-tab label="World"><app-world-map></app-world-map></mat-tab>
+  <mat-tab label="Country"><app-country-map></app-country-map></mat-tab>
+</mat-tab-group>
+</div>

@@ -23,7 +23,14 @@ a {
       height: 100%;
   }
 
-  // .footer{
-  //     margin: 200px 0 0 0;
 
-  // }
+  .spacer{
+      margin: 0 0 100px 0;
+
+  }
+
+.side-button:hover{
+  background: rgb(51, 51, 196);
+  color: white;
+font-weight: bold;
+}

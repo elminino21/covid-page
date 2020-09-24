@@ -8,13 +8,13 @@
       <div class="row">
   
         <!-- Grid column -->
-        <div class="col-md-6 mt-md-0 mt-3">
+        <!-- <div class="col-md-6 mt-md-0 mt-3"> -->
   
           <!-- Content -->
-          <h5 class="text-uppercase">Footer Content</h5>
-          <p>Here you can use rows and columns to organize your footer content.</p>
+          <!-- <h5 class="text-uppercase">Footer Content</h5>
+          <p>Here you can use rows and columns to organize your footer content.</p> -->
   
-        </div>
+        <!-- </div> -->
         <!-- Grid column -->
   
         <hr class="clearfix w-100 d-md-none pb-3">
@@ -23,22 +23,21 @@
         <div class="col-md-3 mb-md-0 mb-3">
   
           <!-- Links -->
-          <h5 class="text-uppercase">Links</h5>
+          <h5 class="text-uppercase">Site Map</h5>
   
           <ul class="list-unstyled">
             <li>
-              <a href="#!">Link 1</a>
+      <a mat-list-item class="side-button" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
             </li>
             <li>
-              <a href="#!">Link 2</a>
+      <a mat-list-item class="side-button" [routerLink]="['/about']" routerLinkActive="router-link-active">About us</a>
             </li>
             <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
+      <a mat-list-item class="side-button" [routerLink]="['/hire-me']" routerLinkActive="router-link-active">Hire me</a>
             </li>
           </ul>
+          
+
   
         </div>
         <!-- Grid column -->
@@ -47,37 +46,37 @@
         <div class="col-md-3 mb-md-0 mb-3">
   
           <!-- Links -->
-          <h5 class="text-uppercase">Links</h5>
+          <h5 class="text-uppercase">Legal</h5>
   
           <ul class="list-unstyled">
             <li>
-              <a href="#!">Link 1</a>
+              <a mat-list-item class="side-button" [routerLink]="['/privacy']" routerLinkActive="router-link-active">Privacy
+                Policy</a>
             </li>
             <li>
-              <a href="#!">Link 2</a>
+              <a mat-list-item class="side-button" [routerLink]="['/DMCA']" routerLinkActive="router-link-active">DMCA</a>
             </li>
             <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
+              <a mat-list-item class="side-button" [routerLink]="['/disclaimer']"
+                routerLinkActive="router-link-active">Disclaimer</a>
             </li>
           </ul>
   
         </div>
         <!-- Grid column -->
   
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">
+      <p>© 2020 Copyright: <a mat-list-item [routerLink]="['/home']"
+          routerLinkActive="router-link-active">covidworldstate.com</a> All rights reserved </p>
+    </div>
+    <!-- Copyright -->
       </div>
       <!-- Grid row -->
   
     </div>
     <!-- Footer Links -->
   
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-      <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-    </div>
-    <!-- Copyright -->
   
   </footer>
   <!-- Footer -->
