@@ -7,6 +7,7 @@
           id="map"
          leaflet 
          (leafletMapReady)="initializeMap($event)"
+         (leafletClick)="leftlClickEvent($event)"
          (leafletMouseOver)="mouseOverEvent($event)"
          (leafletMouseOut)="mouseOutEvent($event)"
          [leafletOptions]="options">

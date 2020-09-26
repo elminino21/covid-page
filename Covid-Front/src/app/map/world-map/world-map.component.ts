@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { latLng, MapOptions, tileLayer, Map } from 'leaflet';
+
 
 @Component({
   selector: 'app-world-map',
@@ -11,10 +13,16 @@ export class WorldMapComponent implements OnInit {
    map: Map;
   options: MapOptions;
   lastLayer: any;
-  constructor() { }
+  constructor(private title:Title, private metaService: Meta ) { }
 
   ngOnInit(): void {
     this.initializeMapOptions();
+    this.title.setTitle('Covid world state');
+    this.metaService.addTags([
+      {name: 'keywords', content: 'covid-19, covid 19, covid news, covid map, covid cases'},
+      {name: 'description', content: 'Covid 19 graphics, news and information. Covid 19 animations.'},
+      {name: 'robots', content: 'index, follow'}
+    ]);
   }
 
 
@@ -36,6 +44,11 @@ private initializeMapOptions ():void {
   // private getCountry ():string {
   //   return '';
   // }
+
+  public leftlClickEvent(event: any) {
+    // console.log(event);
+    //  this.map.fitBounds(event.layer.getBounds());
+  }
 
   public mouseOverEvent(event: Event){
     console.log('mouse over event');
