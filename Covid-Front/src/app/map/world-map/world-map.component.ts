@@ -4,7 +4,6 @@ import { json } from 'd3';
 import { latLng, MapOptions, tileLayer, Map, geoJSON } from 'leaflet';
 import { Observable } from 'rxjs';
 import {  ApiService} from 'src/app/core/services';
- import * as test from '../../../assets/geoJson/custom.geo.json';
 
 
 @Component({
