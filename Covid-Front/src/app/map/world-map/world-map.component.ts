@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { latLng, MapOptions, tileLayer, Map } from 'leaflet';
+import { json } from 'd3';
+import { latLng, MapOptions, tileLayer, Map, geoJSON } from 'leaflet';
+import { Observable } from 'rxjs';
+import {  ApiService} from 'src/app/core/services';
+ import * as test from '../../../assets/geoJson/custom.geo.json';
 
 
 @Component({
@@ -13,7 +17,8 @@ export class WorldMapComponent implements OnInit {
    map: Map;
   options: MapOptions;
   lastLayer: any;
-  constructor(private title:Title, private metaService: Meta ) { }
+  data: any;
+  constructor(private title:Title, private metaService: Meta, private ApiService: ApiService ) { }
 
   ngOnInit(): void {
     this.initializeMapOptions();
@@ -23,6 +28,8 @@ export class WorldMapComponent implements OnInit {
       {name: 'description', content: 'Covid 19 graphics, news and information. Covid 19 animations.'},
       {name: 'robots', content: 'index, follow'}
     ]);
+    
+
   }
 
 
@@ -32,22 +39,32 @@ private initializeMapOptions ():void {
     center: latLng(29.5352, 16.1719),
       layers: [
         tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 4, minZoom:2, attribution: 'OSM'})
+
       ]
-    }
+      
+    } 
+
   }
 
-  initializeMap (map: Map) {
-    this.map = map;
-    console.log('mouse initalize event');
+
+
+  initializeMap(map: Map) {
+  //   this.map = map;
+  //   console.log('mouse initalize event');
+  //  this.data = this.ApiService.getData.subscribe(res =>{
+  //  this.data = res; 
+  //  console.log(this.data);
+  //   }
+  //  );
+  //  console.log(JSON.parse(this.data));
+  //   console.log(this.data);
+  // console.log(JSON.stringify(test));
+  // map.addLayer(geoJSON(JSON.parse(test)));
+
   }
   
-  // private getCountry ():string {
-  //   return '';
-  // }
 
   public leftlClickEvent(event: any) {
-    // console.log(event);
-    //  this.map.fitBounds(event.layer.getBounds());
   }
 
   public mouseOverEvent(event: Event){

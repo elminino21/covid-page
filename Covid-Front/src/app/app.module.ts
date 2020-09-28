@@ -13,6 +13,7 @@ import { MapModule } from './map/map.module';
 import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { DMCAComponent } from './dmca/dmca.component';
+import { CoreModule } from './core/core.module'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DMCAComponent } from './dmca/dmca.component';
     ErrorModule,
     ShellModule,
     BrowserAnimationsModule,
-    MapModule
+    MapModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

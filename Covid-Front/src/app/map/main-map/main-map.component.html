@@ -9,9 +9,21 @@
 </div>
   </div>
 </div></div> -->
-<div class="container">
-<mat-tab-group>
-  <mat-tab label="World"><app-world-map></app-world-map></mat-tab>
-  <mat-tab label="Country"><app-country-map></app-country-map></mat-tab>
-</mat-tab-group>
-</div>
+<!-- <div class="container"> -->
+  <div class="row">
+    <div class="col col-lg-3">
+    <app-country-stats></app-country-stats>
+    </div>
+    <div class="col col-lg-7">
+
+      <mat-tab-group>
+        <mat-tab label="World">
+          <app-world-map></app-world-map>
+        </mat-tab>
+        <mat-tab label="Country">
+          <app-country-map></app-country-map>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+<!-- </div> -->
