@@ -50,7 +50,6 @@ private initializeMapOptions ():void {
 
 
   initializeMap(map: Map) {
-map.
 
   }
 
