@@ -17,12 +17,12 @@ export class ApiService {
     }
     public get getJson()
     {
-      // return this.http.get('https://jsonplaceholder.typicode.com/posts');
-      return this.http.get('https://leafletjs.com/examples/choropleth/us-states.js');
+      return this.http.get('https://jsonplaceholder.typicode.com/posts');
+      // return this.http.get('https://leafletjs.com/examples/choropleth/us-states.js');
     }
     public get getData()
     {
       // return this.http.get('https://jsonplaceholder.typicode.com/posts');
-      return this.http.get('../../../assets/geoJson/custom.geo.json');
+      return this.http.get('../../../assets/geoJson/us-states.json');
     }
 }

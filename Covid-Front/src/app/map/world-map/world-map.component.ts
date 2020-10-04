@@ -1,11 +1,9 @@
+import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { json } from 'd3';
-import { latLng, MapOptions, tileLayer, Map, geoJSON } from 'leaflet';
-import { Observable } from 'rxjs';
+import { latLng, MapOptions, tileLayer, Map, geoJSON, Layer} from 'leaflet';
 import {  ApiService} from 'src/app/core/services';
-
-
+import { CovidDataModel } from '../Models'
 @Component({
   selector: 'app-world-map',
   templateUrl: './world-map.component.html',
@@ -13,13 +11,18 @@ import {  ApiService} from 'src/app/core/services';
 })
 export class WorldMapComponent implements OnInit {
 
-   map: Map;
-  options: MapOptions;
-  lastLayer: any;
-  data: any;
-  constructor(private title:Title, private metaService: Meta, private ApiService: ApiService ) { }
+   private map: Map;
+  public options: MapOptions;
+  private lastLayer: any;
+  private data: any;
+ private covidData: CovidDataModel = new  CovidDataModel();
+  
+
+  constructor(private title:Title, private metaService: Meta, private ApiService: ApiService,  ) {
+   }
 
   ngOnInit(): void {
+
     this.initializeMapOptions();
     this.title.setTitle('Covid world state');
     this.metaService.addTags([
@@ -27,6 +30,8 @@ export class WorldMapComponent implements OnInit {
       {name: 'description', content: 'Covid 19 graphics, news and information. Covid 19 animations.'},
       {name: 'robots', content: 'index, follow'}
     ]);
+
+
     
 
   }
@@ -48,32 +53,104 @@ private initializeMapOptions ():void {
 
 
   initializeMap(map: Map) {
-  //   this.map = map;
-  //   console.log('mouse initalize event');
-  //  this.data = this.ApiService.getData.subscribe(res =>{
-  //  this.data = res; 
-  //  console.log(this.data);
-  //   }
-  //  );
-  //  console.log(JSON.parse(this.data));
-  //   console.log(this.data);
-  // console.log(JSON.stringify(test));
-  // map.addLayer(geoJSON(JSON.parse(test)));
 
+
+    // this.layers = this.setDataOnMap();
+  // [geoJSON(this.covidData.statesData, {style: function (feature) {
+  //   let temp = feature.properties.covid
+
+  //   if(typeof temp !== "undefined"){
+  //       return {
+  //       fillColor: feature.properties.covid.color,
+  //       weight: 2,
+  //       opacity: 1,
+  //       color: 'black',
+  //       dashArray: '3',
+  //       fillOpacity: 0.7
+  //   }; 
+  //   }else{
+  //     return  {
+  //       weight: 2,
+  //       opacity: 1,
+  //       color: 'white',
+  //       dashArray: '3',
+  //     }
+  //   }
+
+  // }}
+    
+  // )];
   }
+
+
+  // private setDataOnMap()
+  // {
+  //   return [geoJSON(this.covidData.statesData, {style: function (feature) {
+  //   let temp = feature.properties.covid
+
+  //   if(typeof temp !== "undefined"){
+  //       return {
+  //       fillColor: feature.properties.covid.color,
+  //       weight: 2,
+  //       opacity: 1,
+  //       color: 'black',
+  //       dashArray: '3',
+  //       fillOpacity: 0.7
+  //   }; 
+  //   }else{
+  //     return  {
+  //       weight: 2,
+  //       opacity: 1,
+  //       color: 'white',
+  //       dashArray: '3',
+  //     }
+  //   }
+
+  // }}
+    
+  // )];
+  // }
+
+
+ layers = [geoJSON(this.covidData.statesData, {style: function (feature) {
+   let temp = feature.properties.covid
+
+   if(typeof temp !== "undefined"){
+       return {
+       fillColor: feature.properties.covid.color,
+       weight: 2,
+       opacity: 1,
+       color: 'black',
+       dashArray: '3',
+       fillOpacity: 0.7
+   }; 
+   }else{
+     return  {
+       weight: 2,
+       opacity: 1,
+       color: 'white',
+       dashArray: '3',
+     }
+   }
+
+ }}
+
+ )];
+
+ 
   
 
   public leftlClickEvent(event: any) {
   }
 
-  public mouseOverEvent(event: Event){
-    console.log('mouse over event');
+  public mouseOverEvent(e: Map){
   }
 
   public mouseOutEvent(event: Event){
     console.log('mouse out event');
 
   }
+
 
 
 
