@@ -1,18 +1,9 @@
-<!-- <div class="container">
-<div class="card ">
-  <h2 class="card-header">World Map Covid-19 Stats</h2>
-  <div class="card-body">
-
-<div #map style="height: 800px;"
-     leaflet 
-     [leafletOptions]="options">
-</div>
-  </div>
-</div></div> -->
-<!-- <div class="container"> -->
   <div class="row">
-    <div class="col col-lg-3">
-    <app-country-stats></app-country-stats>
+    <div  class="col col-lg-3">
+      
+      <div *ngFor="let country of covidData.countryCases | slice:0:10">
+    <app-country-stats [country]="country.countriesAndTerritories" [cases]="country.deaths"></app-country-stats>
+      </div>
     </div>
     <div class="col col-lg-7">
 
@@ -26,4 +17,3 @@
       </mat-tab-group>
     </div>
   </div>
-<!-- </div> -->

@@ -2,8 +2,7 @@ import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { latLng, MapOptions, tileLayer, Map, geoJSON, Layer} from 'leaflet';
-import {  ApiService} from 'src/app/core/services';
-import { CovidDataModel } from '../Models'
+import {  ApiService, CovidData} from 'src/app/core/services';
 @Component({
   selector: 'app-world-map',
   templateUrl: './world-map.component.html',
@@ -15,10 +14,9 @@ export class WorldMapComponent implements OnInit {
   public options: MapOptions;
   private lastLayer: any;
   private data: any;
- private covidData: CovidDataModel = new  CovidDataModel();
   
 
-  constructor(private title:Title, private metaService: Meta, private ApiService: ApiService,  ) {
+  constructor(private title:Title, private metaService: Meta, private ApiService: ApiService, private covidData: CovidData  ) {
    }
 
   ngOnInit(): void {
@@ -54,62 +52,7 @@ private initializeMapOptions ():void {
 
   initializeMap(map: Map) {
 
-
-    // this.layers = this.setDataOnMap();
-  // [geoJSON(this.covidData.statesData, {style: function (feature) {
-  //   let temp = feature.properties.covid
-
-  //   if(typeof temp !== "undefined"){
-  //       return {
-  //       fillColor: feature.properties.covid.color,
-  //       weight: 2,
-  //       opacity: 1,
-  //       color: 'black',
-  //       dashArray: '3',
-  //       fillOpacity: 0.7
-  //   }; 
-  //   }else{
-  //     return  {
-  //       weight: 2,
-  //       opacity: 1,
-  //       color: 'white',
-  //       dashArray: '3',
-  //     }
-  //   }
-
-  // }}
-    
-  // )];
   }
-
-
-  // private setDataOnMap()
-  // {
-  //   return [geoJSON(this.covidData.statesData, {style: function (feature) {
-  //   let temp = feature.properties.covid
-
-  //   if(typeof temp !== "undefined"){
-  //       return {
-  //       fillColor: feature.properties.covid.color,
-  //       weight: 2,
-  //       opacity: 1,
-  //       color: 'black',
-  //       dashArray: '3',
-  //       fillOpacity: 0.7
-  //   }; 
-  //   }else{
-  //     return  {
-  //       weight: 2,
-  //       opacity: 1,
-  //       color: 'white',
-  //       dashArray: '3',
-  //     }
-  //   }
-
-  // }}
-    
-  // )];
-  // }
 
 
  layers = [geoJSON(this.covidData.statesData, {style: function (feature) {
@@ -126,10 +69,12 @@ private initializeMapOptions ():void {
    }; 
    }else{
      return  {
+       fillColor: '#FC4332',
        weight: 2,
        opacity: 1,
-       color: 'white',
+       color: 'black',
        dashArray: '3',
+       fillOpacity: 0.7
      }
    }
 

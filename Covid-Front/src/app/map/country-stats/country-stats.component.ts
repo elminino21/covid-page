@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-country-stats',
@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./country-stats.component.scss']
 })
 export class CountryStatsComponent implements OnInit {
-  public country = 'united state';
-  public cases = 200000;
+  @Input() country: String ;
+  @Input() cases: number ;
 
   constructor() { }
 

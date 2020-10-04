@@ -2,12 +2,10 @@ import { SafeStyle } from '@angular/platform-browser';
 import { CoreModule } from '../core.module';
 import { color } from 'd3';
 import { Observable } from 'rxjs';
-// import { statesData } from '../../../assets/geoJson/custom';
-// import { covid } from '../../../assets/geoJson/covidByDate';
 import { statesData } from '../../../assets/geoJson/custom';
 import { covid } from '../../../assets/geoJson/covidByDate';
 
-import {CountryTotal, IContryInfo } from '../../map/Models';
+import {CountryTotal } from '../../map/Models';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -37,7 +35,7 @@ export class CovidData {
       this.countryCases.forEach(country => {
 
         if (String(element.properties.sovereignt).toUpperCase() == country.countriesAndTerritories.toUpperCase()) {
-          console.log( String(element.properties.sovereignt).toUpperCase() + "    " + country.countriesAndTerritories.toUpperCase() ) ;
+          // console.log( String(element.properties.sovereignt).toUpperCase() + "    " + country.countriesAndTerritories.toUpperCase() ) ;
           death = country.deaths;
           country.color = this.colorManager(death)
           element.properties.covid = country
@@ -46,15 +44,6 @@ export class CovidData {
       }
       );
     });
-  }
-
-
-  public getStyles(feature: any): SafeStyle{
-    console.log(feature);
-
-    // return this.colorManager(feature.features);
-  return {color: 'red'}
-
   }
 
 
@@ -125,7 +114,7 @@ export class CovidData {
           ? '#f7982d'
           : percent > 20
             ? '#eec425'
-            : percent > 0
+            : percent > 5
               ? '#e2e519'
               : "#1BF74A";
   }
@@ -158,9 +147,9 @@ export class CovidData {
   public set hightDeath(value: number) {
     this._hightDeath = value;
   }
-  public getCovidCases() {
-    return this.countryCases;
-  }
+  // public getCovidCases() {
+  //   return this._countryCases;
+  // }
 
   public get countryCases(): CountryTotal[] {
     return this._countryCases;
