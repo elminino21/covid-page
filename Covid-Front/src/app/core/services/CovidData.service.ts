@@ -34,9 +34,10 @@ export class CovidData {
     statesData.features.forEach(element => {
       this.countryCases.forEach(country => {
 
-        if (String(element.properties.sovereignt).toUpperCase() == country.countriesAndTerritories.toUpperCase()) {
+        if (String(element.properties.sovereignt).toUpperCase() == country.countriesAndTerritories.replace(/_/g, " ").toUpperCase()) {
           // console.log( String(element.properties.sovereignt).toUpperCase() + "    " + country.countriesAndTerritories.toUpperCase() ) ;
           death = country.deaths;
+          country.countriesAndTerritories = element.properties.sovereignt;
           country.color = this.colorManager(death)
           element.properties.covid = country
           return;

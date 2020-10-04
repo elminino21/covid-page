@@ -1,7 +1,7 @@
 import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { latLng, MapOptions, tileLayer, Map, geoJSON, Layer} from 'leaflet';
+import { latLng, MapOptions, tileLayer, Map, geoJSON, Layer, control} from 'leaflet';
 import {  ApiService, CovidData} from 'src/app/core/services';
 @Component({
   selector: 'app-world-map',
@@ -14,7 +14,6 @@ export class WorldMapComponent implements OnInit {
   public options: MapOptions;
   private lastLayer: any;
   private data: any;
-  
 
   constructor(private title:Title, private metaService: Meta, private ApiService: ApiService, private covidData: CovidData  ) {
    }
@@ -41,7 +40,7 @@ private initializeMapOptions ():void {
     center: latLng(29.5352, 16.1719),
       layers: [
         tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 4, minZoom:2, attribution: 'OSM'})
-
+        
       ]
       
     } 
@@ -51,6 +50,7 @@ private initializeMapOptions ():void {
 
 
   initializeMap(map: Map) {
+map.
 
   }
 
@@ -69,7 +69,7 @@ private initializeMapOptions ():void {
    }; 
    }else{
      return  {
-       fillColor: '#FC4332',
+       fillColor: 'blue',
        weight: 2,
        opacity: 1,
        color: 'black',

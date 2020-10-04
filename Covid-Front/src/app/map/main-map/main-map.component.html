@@ -1,12 +1,16 @@
   <div class="row">
     <div  class="col col-lg-3">
-      
+      <mat-card class="example-card">
+     <mat-card-header>
+    <mat-card-title>Countries by cases</mat-card-title>
+  </mat-card-header>
+</mat-card>
+   
       <div *ngFor="let country of covidData.countryCases | slice:0:10">
-    <app-country-stats [country]="country.countriesAndTerritories" [cases]="country.deaths"></app-country-stats>
+    <app-country-stats [country]="country.countriesAndTerritories" [cases]="country.deaths | number:'1.0':'en-US' "></app-country-stats>
       </div>
     </div>
     <div class="col col-lg-7">
-
       <mat-tab-group>
         <mat-tab label="World">
           <app-world-map></app-world-map>
