@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CountryStatsComponent implements OnInit {
   @Input() country: String ;
   @Input() cases: number ;
+  @Input() death: number ;
 
   constructor() { }
 

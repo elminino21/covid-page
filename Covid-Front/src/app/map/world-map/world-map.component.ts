@@ -35,11 +35,12 @@ export class WorldMapComponent implements OnInit {
 
 
 private initializeMapOptions ():void {
+  // this.map.latLngBounds()
     this.options = {
       zoom: 2,
     center: latLng(29.5352, 16.1719),
       layers: [
-        tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 4, minZoom:2, attribution: 'OSM'})
+        tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 4, minZoom:2, attribution: 'OSM', noWrap: true })
         
       ]
       
