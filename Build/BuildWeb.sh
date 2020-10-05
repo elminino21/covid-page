@@ -1,7 +1,7 @@
 #!/bin/bash
 
 name="elminino/covid-front"
-version="v0.0."
+version="v1.0."
 
 num=$(<./buildNum.txt)
 
