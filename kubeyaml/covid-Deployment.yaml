@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: covid-app
-        image: elminino/covid-front:0.0.8
+        image: elminino/covid-front:v1.0.21
         ports:
         - containerPort: 80
 ---
